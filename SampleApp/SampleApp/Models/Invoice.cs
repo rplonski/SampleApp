@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace SampleApp.Models
 {
-    class Invoice
+    public class Invoice
     {
+        public Invoice()
+        {
+
+        }
+
+        Company company { get; set; }
+        public List<InvoiceItem> items { get; set; }
     }
 }

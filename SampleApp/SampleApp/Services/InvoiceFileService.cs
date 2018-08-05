@@ -4,17 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Models;
 
 namespace SampleApp.Services
 {
-    public static class InvoiceService
+    public static class InvoiceFileService
     {
-        public static Invoice GetInvoiceById(int invoiceId)
+        public static void SaveInvoiceFile(Invoice invoice)
         {
-            // TODO: the mechanism of invoice getting
-            return new Invoice();
+            //TODO: implement mechanism to save file
         }
-
     }
 }

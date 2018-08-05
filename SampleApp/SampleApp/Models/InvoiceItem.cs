@@ -8,8 +8,34 @@ namespace SampleApp.Models
 {
     public class InvoiceItem
     {
+        public string Name { get; set; }
         public int VatRate { get; set; }
         public double AmountNet { get; set; }
         public double AmountGross { get; set; }
+
+        public void CalculateGrossAmount()
+        {
+            AmountGross = AmountNet + AmountNet * (VatRate / 100);
+        }
+
+        public void SetName(string name)
+        {
+            Name = name;
+        }
+
+        public void SetVatRate(int vatRate)
+        {
+            if (vatRate >= 0 && vatRate <= 100)
+            {
+                VatRate = vatRate;
+            }
+            else throw new Exception("Wrong vat rate value");
+        }
+
+        public void SetAmountNet(double amountNet)
+        {
+            AmountNet = amountNet;
+        }
+
     }
 }
