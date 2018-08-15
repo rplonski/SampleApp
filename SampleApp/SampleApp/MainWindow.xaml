@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SampleApp"
         mc:Ignorable="d"
-        Title="InvoiceApp" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="InvoiceApp" Height="368.4" Width="525">
+    <TabControl>
+        <TabItem Header="Start">
+            <Label Content="" />
+        </TabItem>
+        <TabItem Header="Wystaw fakturę">
+            <Grid Margin="0,-12,-0.2,12">
+                <Button Name="btnSaveInvoice" Content="Zapisz" Margin="382,274,25,9.6" Click="btnSaveInvoice_Click"></Button>
+                <DatePicker x:Name="tbIssueDate"  HorizontalAlignment="Left" Height="23" Margin="359,56,0,0" Text="" VerticalAlignment="Top" Width="120"/>
+                <Label x:Name="label" Content="Data wystawienia:" HorizontalAlignment="Left" Margin="359,30,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label1" Content="Dane sprzedawcy:" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label2" Content="Dane nabywcy:" HorizontalAlignment="Left" Margin="178,27,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbSellerData" HorizontalAlignment="Left" Height="65" Margin="10,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="144"/>
+                <TextBox x:Name="tbBuyerData" HorizontalAlignment="Left" Height="65" Margin="178,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+                <TextBox x:Name="tbProductName1" HorizontalAlignment="Left" Height="23" Margin="10,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="159"/>
+                <TextBox x:Name="tbAmount1" HorizontalAlignment="Left" Height="23" Margin="174,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70"/>
+                <TextBox x:Name="tbUnit1" HorizontalAlignment="Left" Height="23" Margin="249,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="67"/>
+                <TextBox x:Name="tbNettoPrice1" HorizontalAlignment="Left" Height="23" Margin="322,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="88"/>
+                <TextBox x:Name="tbVat1" HorizontalAlignment="Left" Height="23" Margin="415,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="69"/>
+                <TextBox x:Name="tbProductName2" HorizontalAlignment="Left" Height="23" Margin="10,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="159"/>
+                <TextBox x:Name="tbAmount2" HorizontalAlignment="Left" Height="23" Margin="174,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70"/>
+                <TextBox x:Name="tbUnit2" HorizontalAlignment="Left" Height="23" Margin="249,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="67"/>
+                <TextBox x:Name="tbNettoPrice2" HorizontalAlignment="Left" Height="23" Margin="322,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="88"/>
+                <TextBox x:Name="tbVat2" HorizontalAlignment="Left" Height="23" Margin="415,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="69"/>
+                <TextBox x:Name="tbProductName3" HorizontalAlignment="Left" Height="23" Margin="10,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="159"/>
+                <TextBox x:Name="tbAmount3" HorizontalAlignment="Left" Height="23" Margin="174,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70"/>
+                <TextBox x:Name="tbUnit3" HorizontalAlignment="Left" Height="23" Margin="249,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="67"/>
+                <TextBox x:Name="tbNettoPrice3" HorizontalAlignment="Left" Height="23" Margin="322,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="88"/>
+                <TextBox x:Name="tbVat3" HorizontalAlignment="Left" Height="23" Margin="415,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="69"/>
+                <TextBox x:Name="tbProductName4" HorizontalAlignment="Left" Height="23" Margin="10,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="159"/>
+                <TextBox x:Name="tbAmount4" HorizontalAlignment="Left" Height="23" Margin="174,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70"/>
+                <TextBox x:Name="tbUnit4" HorizontalAlignment="Left" Height="23" Margin="249,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="67"/>
+                <TextBox x:Name="tbNettoPrice4" HorizontalAlignment="Left" Height="23" Margin="322,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="88"/>
+                <TextBox x:Name="tbVat4" HorizontalAlignment="Left" Height="23" Margin="415,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="69"/>
+            </Grid>
+
+
+        </TabItem>
+        <TabItem Header="Lista faktur" />
+    </TabControl>
 </Window>

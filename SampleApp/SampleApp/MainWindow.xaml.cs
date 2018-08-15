@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SampleApp.Models;
 
 namespace SampleApp
 {
@@ -23,6 +24,36 @@ namespace SampleApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnSaveInvoice_Click(object sender, RoutedEventArgs e)
+        {
+            Invoice invoice = new Invoice();
+
+            if(!string.IsNullOrEmpty(tbProductName1.Text))
+            {
+                InvoiceItem invoiceItem = new InvoiceItem()
+                {
+                    Name = tbProductName1.Text,
+                    AmountNet = Convert.ToDouble(tbAmount1.Text)
+                };
+
+                invoiceItem.SetAmountNet(Convert.ToDouble(tbNettoPrice1.Text));
+                invoiceItem.SetVatRate(Convert.ToInt32(tbVat1.Text));
+                invoiceItem.CalculateGrossAmount();
+            }
+            if (!string.IsNullOrEmpty(tbProductName2.Text))
+            {
+                InvoiceItem invoiceItem = new InvoiceItem()
+                {
+                    Name = tbProductName2.Text,
+                    AmountNet = Convert.ToDouble(tbAmount2.Text)
+                };
+
+                invoiceItem.SetAmountNet(Convert.ToDouble(tbNettoPrice2.Text));
+                invoiceItem.SetVatRate(Convert.ToInt32(tbVat2.Text));
+                invoiceItem.CalculateGrossAmount();
+            }
         }
     }
 }

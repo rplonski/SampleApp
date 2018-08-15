@@ -9,13 +9,13 @@ namespace SampleApp.Models
     public class InvoiceItem
     {
         public string Name { get; set; }
-        public int VatRate { get; set; }
+        private int VatRate { get; set; }
         public double AmountNet { get; set; }
-        public double AmountGross { get; set; }
+        private double AmountGross { get; set; }
 
         public void CalculateGrossAmount()
         {
-            AmountGross = AmountNet + AmountNet * (VatRate / 100);
+            AmountGross = AmountNet + AmountNet * ((double)VatRate / 100);
         }
 
         public void SetName(string name)
