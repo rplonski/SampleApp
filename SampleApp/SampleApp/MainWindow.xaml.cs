@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SampleApp.Models;
+using SampleApp.Services;
 
 namespace SampleApp
 {
@@ -28,9 +29,10 @@ namespace SampleApp
 
         private void btnSaveInvoice_Click(object sender, RoutedEventArgs e)
         {
+            
             Invoice invoice = new Invoice();
-
-            if(!string.IsNullOrEmpty(tbProductName1.Text))
+            InvoiceFileService.SaveInvoiceFile(invoice);
+            if (!string.IsNullOrEmpty(tbProductName1.Text))
             {
                 InvoiceItem invoiceItem = new InvoiceItem()
                 {

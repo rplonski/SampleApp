@@ -11,7 +11,7 @@ namespace SampleApp.Models
         public string Name { get; set; }
         private int VatRate { get; set; }
         public double AmountNet { get; set; }
-        private double AmountGross { get; set; }
+        public double AmountGross { get; set; }
 
         public void CalculateGrossAmount()
         {
@@ -29,12 +29,17 @@ namespace SampleApp.Models
             {
                 VatRate = vatRate;
             }
-            else throw new Exception("Wrong vat rate value");
+            else throw new ArgumentOutOfRangeException("Wrong vat rate value");
         }
 
         public void SetAmountNet(double amountNet)
         {
             AmountNet = amountNet;
+        }
+
+        public int GetVatRate()
+        {
+            return VatRate;
         }
 
     }
