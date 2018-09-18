@@ -57,6 +57,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\InvoiceItem.cs" />
+    <Compile Include="Services\DBService.cs" />
     <Compile Include="Services\InvoiceFileService.cs" />
     <Compile Include="Services\InvoiceService.cs" />
     <Page Include="MainWindow.xaml">

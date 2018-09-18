@@ -40,5 +40,64 @@ namespace SampleApp.Tests.MSTest
             Assert.IsFalse(File.Exists(filPath));
 
         }
+
+        [TestMethod]
+        public void DownloadInvoiceFile_FileExists_FileDownloaded()
+        {
+            //Arrange
+            string sourceFilePath = @"C:\Invoices\00000000-0000-0000-0000-000000000000.xml";
+            string downloadingFilePath = @"C:\Invoices\Downloads\00000000-0000-0000-0000-000000000000.xml";
+
+            //Act
+            InvoiceFileService.DownloadInvoiceFile("", sourceFilePath, downloadingFilePath);
+
+            //Assert
+            Assert.IsTrue(File.Exists(downloadingFilePath));
+
+        }
+
+        [TestMethod]
+        public void DownloadInvoiceFile_WrongInvoiceId_ExceptionOccured()
+        {
+            //Arrange
+            string sourceFilePath = @"C:\Invoices\wrongid.xml";
+            string downloadingFilePath = @"C:\Invoices\Downloads\00000000-0000-0000-0000-000000000000.xml";
+            Exception expectedException = null;
+
+            //Act
+            try
+            {
+                InvoiceFileService.DownloadInvoiceFile("", sourceFilePath, downloadingFilePath);
+            }
+            catch (Exception ex)
+            {
+                expectedException = ex;
+            }
+
+            //Assert
+            Assert.IsNotNull(expectedException);
+        }
+
+        public void DownloadInvoiceFile_WrongInvoiceId_CorrectExceptionOccured()
+        {
+            //Arrange
+            string sourceFilePath = @"C:\Invoices\wrongid.xml";
+            string downloadingFilePath = @"C:\Invoices\Downloads\00000000-0000-0000-0000-000000000000.xml";
+            Exception expectedException = null;
+            var fileNotFoundException = new FileNotFoundException();
+
+            //Act
+            try
+            {
+                InvoiceFileService.DownloadInvoiceFile("", sourceFilePath, downloadingFilePath);
+            }
+            catch (Exception ex)
+            {
+                expectedException = ex;
+            }
+
+            //Assert
+            Assert.AreEqual(fileNotFoundException.GetType(), expectedException.GetType());
+        }
     }
 }

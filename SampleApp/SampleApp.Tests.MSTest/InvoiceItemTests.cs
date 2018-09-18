@@ -8,7 +8,7 @@ namespace SampleApp.Tests.MSTest
     public class InvoiceItemTests
     {
         [TestMethod]
-        public void CalculateGrossAmount_CorrectVat_CorrectFrossAmount()
+        public void CalculateGrossAmount_CorrectVat_CorrectGrossAmount()
         {
             //Arrange
             var invoiceItem = new InvoiceItem();
@@ -23,7 +23,7 @@ namespace SampleApp.Tests.MSTest
         }
 
         [TestMethod]
-        public void CalculateGrossAmount_IncorrectVat_IncorrectFrossAmount()
+        public void CalculateGrossAmount_IncorrectVat_IncorrectGrossAmount()
         {
             //Arrange
             var invoiceItem = new InvoiceItem();

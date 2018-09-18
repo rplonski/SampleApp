@@ -15,9 +15,33 @@ namespace SampleApp.Services
         {
             //TODO: implement mechanism to save file
             // Temporary save fake file
-            File.Create(invoice.GetFilePath());
+            string filePath = invoice.GetFilePath();
+            string fileContent = string.Empty;
 
-           
+            fileContent += invoice.SellerData + invoice.BuyerData + invoice.IssueDate.ToString();
+
+            
+            //foreach (var invoiceItem in invoice.items)
+            //{
+            //    fileContent += invoiceItem.Name;
+            //}
+
+            using (FileStream fs = File.Create(filePath))
+            {
+                Byte[] info = new UTF8Encoding(true).GetBytes(fileContent);
+                // Add some information to the file.
+                fs.Write(info, 0, info.Length);
+            }
+
+
+        }
+
+        public static void DownloadInvoiceFile(string invoiceId, string sourceFilePath, string downloadingFilePath)
+        {
+            if (!File.Exists(sourceFilePath))
+                throw new FileNotFoundException();
+            File.Copy(sourceFilePath, downloadingFilePath, true);
+     
         }
     }
 }

@@ -13,7 +13,7 @@
         <TabItem Header="Wystaw fakturę">
             <Grid Margin="0,-12,-0.2,12">
                 <Button Name="btnSaveInvoice" Content="Zapisz" Margin="382,274,25,9.6" Click="btnSaveInvoice_Click"></Button>
-                <DatePicker x:Name="tbIssueDate"  HorizontalAlignment="Left" Height="23" Margin="359,56,0,0" Text="" VerticalAlignment="Top" Width="120"/>
+                <DatePicker  x:Name="tbIssueDate"  HorizontalAlignment="Left" Height="23" Margin="359,56,0,0" Text="" VerticalAlignment="Top" Width="120"/>
                 <Label x:Name="label" Content="Data wystawienia:" HorizontalAlignment="Left" Margin="359,30,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="label1" Content="Dane sprzedawcy:" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="label2" Content="Dane nabywcy:" HorizontalAlignment="Left" Margin="178,27,0,0" VerticalAlignment="Top"/>
@@ -39,10 +39,20 @@
                 <TextBox x:Name="tbUnit4" HorizontalAlignment="Left" Height="23" Margin="249,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="67"/>
                 <TextBox x:Name="tbNettoPrice4" HorizontalAlignment="Left" Height="23" Margin="322,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="88"/>
                 <TextBox x:Name="tbVat4" HorizontalAlignment="Left" Height="23" Margin="415,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="69"/>
+                <Label x:Name="label3" Content="Nazwa produktu" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="159"/>
+                <Label x:Name="label4" Content="Ilość" HorizontalAlignment="Left" Margin="174,135,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label4_Copy" Content="Jednostka" HorizontalAlignment="Left" Margin="249,135,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label4_Copy1" Content="Cena netto" HorizontalAlignment="Left" Margin="322,135,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label4_Copy2" Content="Stawka Vat&#xD;&#xA;" HorizontalAlignment="Left" Margin="415,135,0,0" VerticalAlignment="Top"/>
             </Grid>
 
 
         </TabItem>
-        <TabItem Header="Lista faktur" />
+        <TabItem Header="Lista faktur">
+            <Grid Margin="0,-12,-0.2,12">
+                <TextBox x:Name="tbInvoiceDate1" HorizontalAlignment="Left" Height="23" Margin="10,51,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="121"/>
+                <Button x:Name="btnDownload1" Content="Pobierz" HorizontalAlignment="Left" Margin="145,51,0,0" VerticalAlignment="Top" Width="75" Click="btnDownload1_Click"/>
+            </Grid>
+        </TabItem>
     </TabControl>
 </Window>

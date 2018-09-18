@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SampleApp.Models;
 using SampleApp.Services;
+using System.Configuration;
 
 namespace SampleApp
 {
@@ -29,8 +30,13 @@ namespace SampleApp
 
         private void btnSaveInvoice_Click(object sender, RoutedEventArgs e)
         {
+          //  MessageBox.Show("Plik nie istnieje", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
             
             Invoice invoice = new Invoice();
+            invoice.SellerData = tbSellerData.Text;
+            invoice.BuyerData = tbBuyerData.Text;
+            invoice.IssueDate = tbIssueDate.SelectedDate;
+
             InvoiceFileService.SaveInvoiceFile(invoice);
             if (!string.IsNullOrEmpty(tbProductName1.Text))
             {
@@ -56,6 +62,16 @@ namespace SampleApp
                 invoiceItem.SetVatRate(Convert.ToInt32(tbVat2.Text));
                 invoiceItem.CalculateGrossAmount();
             }
+        }
+
+        private void btnDownload1_Click(object sender, RoutedEventArgs e)
+        {
+
+            string sourcefilePath = ConfigurationManager.AppSettings["InvoiceFilePath"] + tbInvoiceDate1.Text + ".xml";
+            string destinationFilePath = @"C:\Invoices\Downloads\" + tbInvoiceDate1.Text + ".xml";
+
+            InvoiceFileService.DownloadInvoiceFile("", sourcefilePath, destinationFilePath);
+
         }
     }
 }

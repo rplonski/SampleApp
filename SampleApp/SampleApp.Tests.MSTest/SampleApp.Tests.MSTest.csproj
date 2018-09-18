@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DBServiceTests.cs" />
     <Compile Include="InvoiceItemTests.cs" />
     <Compile Include="InvoiceFileServiceTests.cs" />
     <Compile Include="InvoiceTests.cs" />

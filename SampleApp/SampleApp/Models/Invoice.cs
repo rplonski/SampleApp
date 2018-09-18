@@ -12,11 +12,17 @@ namespace SampleApp.Models
     {
         public Invoice()
         {
-            Id = new Guid();
+            Guid guid;
+            guid = Guid.NewGuid();
+            Id = guid;
             FilePath = ConfigurationManager.AppSettings["InvoiceFilePath"] + Id.ToString() + ".xml";
         }
 
         public Guid Id { get; set; }
+
+        public string SellerData { get; set; }
+        public string BuyerData { get; set; }
+        public DateTime? IssueDate { get; set; }
 
         Company company { get; set; }
         public List<InvoiceItem> items { get; set; }
