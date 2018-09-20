@@ -10,19 +10,19 @@ namespace SampleApp.Tests.xUnit
 {
     public class InvoiceItemTests
     {
-        [Fact]
-        public void CalculateGrossAmount_CorrectVat_CorrectFrossAmount()
-        {
-            //Arrange
-            var invoiceItem = new InvoiceItem();
-            invoiceItem.AmountNet = 100;
-            invoiceItem.SetVatRate(23);
+        //[Fact]
+        //public void CalculateGrossAmount_CorrectVat_CorrectFrossAmount()
+        //{
+        //    //Arrange
+        //    var invoiceItem = new InvoiceItem();
+        //    invoiceItem.AmountNet = 100;
+        //    invoiceItem.SetVatRate(23);
 
-            //Act
-            invoiceItem.CalculateGrossAmount();
+        //    //Act
+        //    invoiceItem.CalculateGrossAmount();
 
-            //Assert
-            Assert.Equal(123, invoiceItem.AmountGross);
-        }
+        //    //Assert
+        //    Assert.Equal(123, invoiceItem.AmountGross);
+        //}
     }
 }

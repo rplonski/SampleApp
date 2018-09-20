@@ -26,6 +26,8 @@ namespace SampleApp
         public MainWindow()
         {
             InitializeComponent();
+
+            var x = DBService.GetAllInvoices(string.Empty);
         }
 
         private void btnSaveInvoice_Click(object sender, RoutedEventArgs e)
@@ -38,6 +40,9 @@ namespace SampleApp
             invoice.IssueDate = tbIssueDate.SelectedDate;
 
             InvoiceFileService.SaveInvoiceFile(invoice);
+
+            DBService.InsertInvoice(invoice);
+
             if (!string.IsNullOrEmpty(tbProductName1.Text))
             {
                 InvoiceItem invoiceItem = new InvoiceItem()

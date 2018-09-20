@@ -14,11 +14,15 @@ namespace SampleApp.Models
         {
             Guid guid;
             guid = Guid.NewGuid();
-            Id = guid;
+            Id = guid.ToString();
             FilePath = ConfigurationManager.AppSettings["InvoiceFilePath"] + Id.ToString() + ".xml";
+            items = new List<InvoiceItem>();
         }
 
-        public Guid Id { get; set; }
+        public string Id { get; set; }
+
+        public double TotalGrossAmount { get; set; }
+        public double TotalNetAmount { get; set; }
 
         public string SellerData { get; set; }
         public string BuyerData { get; set; }
@@ -42,6 +46,30 @@ namespace SampleApp.Models
         public void SaveFile()
         {
             InvoiceFileService.SaveInvoiceFile(this);
+        }
+
+        public void CalculateTotalNetAmount()
+        {
+            double totalNetAmount = 0;
+
+            foreach(var invoiceItem in items)
+            {
+                totalNetAmount += invoiceItem.AmountNet;
+            }
+
+            this.TotalNetAmount = totalNetAmount;
+        }
+
+        public void CalculateTotalGrossAmount()
+        {
+            double totalGrossAmount = 0;
+
+            foreach (var invoiceItem in items)
+            {
+                totalGrossAmount += invoiceItem.AmountGross;
+            }
+
+            this.TotalGrossAmount = totalGrossAmount;
         }
     }
 }

@@ -8,10 +8,22 @@ namespace SampleApp.Models
 {
     public class InvoiceItem
     {
+        public InvoiceItem()
+        {
+            Guid guid;
+            guid = Guid.NewGuid();
+            Id = guid.ToString();
+
+        }
+
+        public string Id { get; set; }
+        public string InvoiceId { get; set; }
         public string Name { get; set; }
         private int VatRate { get; set; }
         public double AmountNet { get; set; }
         public double AmountGross { get; set; }
+        public int Amount { get; set; }
+        public string Unit { get; set; }
 
         public void CalculateGrossAmount()
         {
