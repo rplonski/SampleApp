@@ -61,7 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBServiceTests.cs" />
+    <Compile Include="InvoiceFileServiceTests.cs" />
     <Compile Include="InvoiceItemTests.cs" />
+    <Compile Include="InvoiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
